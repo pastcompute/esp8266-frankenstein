@@ -42,6 +42,9 @@ int exec_iwconnect(const char *ssid, const char *password)
 	struct station_config sta_conf;
 	os_strncpy((char*)sta_conf.ssid, ssid, sizeof sta_conf.ssid);
 
+	/* Handle random connection issues: http://41j.com/blog/2015/01/esp8266-wifi-doesnt-connect/ */
+	sta_conf.bssid_set = 0;
+
 	sta_conf.password[0] = 0x0;
 	if (password != NULL) {
 		os_strncpy((char*)&sta_conf.password, password, 32);
