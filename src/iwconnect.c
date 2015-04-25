@@ -40,6 +40,7 @@ bailout:
 int exec_iwconnect(const char *ssid, const char *password)
 {
 	struct station_config sta_conf;
+	memset(&sta_conf, 0, sizeof(sta_conf));
 	os_strncpy((char*)sta_conf.ssid, ssid, sizeof sta_conf.ssid);
 
 	/* Handle random connection issues: http://41j.com/blog/2015/01/esp8266-wifi-doesnt-connect/ */
