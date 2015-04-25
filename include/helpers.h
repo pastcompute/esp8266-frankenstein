@@ -13,6 +13,12 @@
 const char ICACHE_FLASH_ATTR *id_to_wireless_mode(int id);
 int ICACHE_FLASH_ATTR id_from_wireless_mode(const char *id);
 
+const char ICACHE_FLASH_ATTR *id_to_wifi_sleep_type(int id);
+int ICACHE_FLASH_ATTR id_from_wifi_sleep_type(const char *id);
+
+const char ICACHE_FLASH_ATTR *id_to_phy_mode(int id);
+int ICACHE_FLASH_ATTR id_from_phy_mode(const char *id);
+
 const char ICACHE_FLASH_ATTR *id_to_encryption_mode(int id);
 int ICACHE_FLASH_ATTR id_from_encryption_mode(const char *id);
 

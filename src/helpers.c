@@ -36,6 +36,17 @@ static const char *ifacedsc[] = {
 	[SOFTAP_IF] = "WiFi Access Point Interface",
 };
 
+static const char *sleep_type[] = {
+	[NONE_SLEEP_T] = "None",
+	[LIGHT_SLEEP_T] = "Light",
+	[MODEM_SLEEP_T] = "Modem",
+};
+
+static const char *phy_modes[] = {
+	[PHY_MODE_11B] = "11B",
+	[PHY_MODE_11G] = "11G",
+	[PHY_MODE_11N] = "11N",
+};
 
 static const char *sta_states[] = {
 	[STATION_IDLE]              = "Idle",
@@ -45,7 +56,6 @@ static const char *sta_states[] = {
 	[STATION_CONNECT_FAIL]      = "Connection Failed",
 	[STATION_GOT_IP]            = "Connected",
 };
-
 
 int  lookup_index(const char* key, const char **tbl, int count)
 {
@@ -81,6 +91,8 @@ DECLARE_LOOKUP(ciphers, encryption_mode);
 DECLARE_LOOKUP(ifacename, iface_name);
 DECLARE_LOOKUP(ifacedsc, iface_description);
 DECLARE_LOOKUP(sta_states, sta_state);
+DECLARE_LOOKUP(sleep_type, wifi_sleep_type);
+DECLARE_LOOKUP(phy_modes, phy_mode);
 
 #define is_digit(c)	((c) >= '0' && (c) <= '9')
 
