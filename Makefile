@@ -15,6 +15,9 @@ CFLAGS+=-D__ets__ \
 	-DPBUF_RSV_FOR_WLAN \
 	-DEBUF_LWIP
 
+LDFLAGS += -Wl,--undefined=_xtos_set_exception_handler -Wl,--wrap=_xtos_set_exception_handler
+ELFFLAGS += -Wl,--undefined=_xtos_set_exception_handler -Wl,--wrap=_xtos_set_exception_handler
+
 
 ifeq ($(ANTARES_INSTALL_DIR),)
 antares:
