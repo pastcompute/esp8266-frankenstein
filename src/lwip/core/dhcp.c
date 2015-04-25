@@ -296,6 +296,7 @@ dhcp_select(struct netif *netif)
 
 //#if LWIP_NETIF_HOSTNAME
     const char *p = (const char*) fr_request_hostname();
+    if (p) {
     
       u8_t namelen = (u8_t)strlen(p);
       if (namelen > 0) {
@@ -305,7 +306,7 @@ dhcp_select(struct netif *netif)
           dhcp_option_byte(dhcp, *p++);
         }
       }
-      
+    }
 //#endif /* LWIP_NETIF_HOSTNAME */
 
     dhcp_option_trailer(dhcp);
